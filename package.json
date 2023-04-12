@@ -11,7 +11,8 @@
 		"prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
 		"prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
 		"pre-commit": "lint-staged --allow-empty",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"release": "standard-version"
 	},
 	"repository": {
 		"type": "git",
