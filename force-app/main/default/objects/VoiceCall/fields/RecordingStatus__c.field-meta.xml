@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecordingStatus__c</fullName>
+    <description>Current status of the recording for the VoiceCall</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Current status of the recording for the VoiceCall</inlineHelpText>
+    <label>Recording Status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>not_started</fullName>
+                <default>true</default>
+                <label>not_started</label>
+            </value>
+            <value>
+                <fullName>in_progress</fullName>
+                <default>false</default>
+                <label>in_progress</label>
+            </value>
+            <value>
+                <fullName>suspended</fullName>
+                <default>false</default>
+                <label>suspended</label>
+            </value>
+            <value>
+                <fullName>stopped</fullName>
+                <default>false</default>
+                <label>stopped</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

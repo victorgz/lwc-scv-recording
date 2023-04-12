@@ -1,0 +1,54 @@
+<template>
+	<!-- Service Cloud Voice Toolkit API -->
+	<lightning-service-cloud-voice-toolkit-api
+		oncallconnected={handleCallConnected}
+		oncallended={handleCallEnded}></lightning-service-cloud-voice-toolkit-api>
+
+	<!-- Markup -->
+	<template lwc:if={isVisible}>
+		<lightning-card icon-name="standard:voice_call">
+			<div slot="title">
+				<span>Call Recording</span>
+				<lightning-icon
+					icon-name="utility:record"
+					class="slds-p-left_xx-small"
+					alternative-text="record"
+					size="x-small"
+					title="record"
+					variant={recordingIconVariant}></lightning-icon>
+			</div>
+			<lightning-button-group slot="actions">
+				<template lwc:if={isLoading}>
+					<lightning-spinner variant="brand" size="small"> </lightning-spinner>
+				</template>
+				<template lwc:if={isStartButtonVisible}>
+					<lightning-button
+						label="Start"
+						icon-name="utility:play"
+						onclick={start}></lightning-button>
+				</template>
+
+				<template lwc:if={isSuspendButtonVisible}>
+					<lightning-button
+						label="Suspend"
+						icon-name="utility:pause"
+						onclick={suspend}></lightning-button>
+				</template>
+
+				<template lwc:if={isResumeButtonVisible}>
+					<lightning-button
+						label="Resume"
+						icon-name="utility:play"
+						onclick={resume}></lightning-button>
+				</template>
+
+				<template lwc:if={isStopButtonVisible}>
+					<lightning-button
+						label="Stop"
+						icon-name="utility:stop"
+						onclick={stop}></lightning-button>
+				</template>
+			</lightning-button-group>
+		</lightning-card>
+	</template>
+</template>
