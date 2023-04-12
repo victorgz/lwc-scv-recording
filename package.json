@@ -1,0 +1,52 @@
+{
+	"name": "lwc-scv-recording",
+	"version": "1.0.0",
+	"description": "Salesforce LWC to control call recording on Service Cloud Voice",
+	"scripts": {
+		"lint": "npm run lint:lwc && npm run lint:apex",
+		"lint:lwc": "eslint force-app/main/default/lwc && eslint force-app/sample/default/lwc",
+		"lint:apex": "pmd pmd --minimum-priority 2 -d force-app -R apex-ruleset.xml -f text -l apex",
+		"prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+		"prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+		"pre-commit": "lint-staged --allow-empty",
+		"prepare": "husky install"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/victorgz/lwc-scv-recording.git"
+	},
+	"keywords": [
+		"lwc",
+		"salesforce",
+		"service-cloud-voice",
+		"apex",
+		"lightning"
+	],
+	"author": "victorgz",
+	"license": "SEE LICENSE IN LICENSE",
+	"bugs": {
+		"url": "https://github.com/victorgz/lwc-scv-recording/issues"
+	},
+	"homepage": "https://github.com/victorgz/lwc-scv-recording#readme",
+	"devDependencies": {
+		"@commitlint/cli": "^17.4.2",
+		"@commitlint/config-conventional": "^17.4.2",
+		"@locker/eslint-config-locker": "^0.16.9",
+		"@prettier/plugin-xml": "^0.13.1",
+		"@salesforce/eslint-config-lwc": "^0.11.0",
+		"@salesforce/sfdx-lwc-jest": "^1.1.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
+		"prettier": "^2.8.3",
+		"prettier-plugin-apex": "^1.8.0",
+		"standard-version": "^9.5.0"
+	},
+	"lint-staged": {
+		"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}": [
+			"prettier --write"
+		],
+		"**/lwc/**": [
+			"eslint"
+		]
+	}
+}
