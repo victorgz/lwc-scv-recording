@@ -9,3 +9,4 @@
 .localdevserver
 node_modules
 .sf
+coverage/
