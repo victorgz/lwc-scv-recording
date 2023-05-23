@@ -126,7 +126,7 @@ In order to prevent the user clicking on the buttons when the call context is no
     <img align="center" alt="Recording Start" src="./assets/component_visibility.png" />
 </div>
 
-- The component also leverages the Service Cloud Toolkit API, to render the markup only when the callconnected component is triggered
+- The component also leverages the Service Cloud Toolkit API, to render the markup only when the callconnected event is triggered
 
   - Because of the Agent whisper flow, when the agent accepts the call (event: callaccepted) the whisper flow happens but the call is not connected yet. At this point, trying to interact with the recording will return an error.
 
